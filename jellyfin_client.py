@@ -604,6 +604,7 @@ class JellyfinClient(MediaClient):
                 "Recursive": "true",
                 "Fields": "ProviderIds,PremiereDate,UserData",
                 "UserId": self._user_id,
+                "CollapseBoxSetItems": False,
             })
             if not resp.ok:
                 return []
@@ -663,6 +664,7 @@ class JellyfinClient(MediaClient):
                 "enableUserData": "true",
                 "enableImages": "true",
                 "imageTypeLimit": 1,
+                "CollapseBoxSetItems": False,
             })
             for m in resp.json().get("Items") or []:
                 mid = str(m.get("Id") or "")
